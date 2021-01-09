@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A12F323225A975D000C1C96E /* Tutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12F323025A975D000C1C96E /* Tutor.swift */; };
+		A12F323325A975D000C1C96E /* Tutor.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A12F323125A975D000C1C96E /* Tutor.xcassets */; };
+		A12F323525A984A800C1C96E /* DateDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12F323425A984A800C1C96E /* DateDetail.swift */; };
 		A1D8EC0E25A841FD007CDA0D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D8EC0D25A841FD007CDA0D /* AppDelegate.swift */; };
 		A1D8EC1025A841FD007CDA0D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D8EC0F25A841FD007CDA0D /* SceneDelegate.swift */; };
 		A1D8EC1225A841FD007CDA0D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D8EC1125A841FD007CDA0D /* ContentView.swift */; };
@@ -15,6 +18,7 @@
 		A1D8EC1A25A841FF007CDA0D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1D8EC1825A841FF007CDA0D /* LaunchScreen.storyboard */; };
 		A1D8EC2525A841FF007CDA0D /* BeauBodyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D8EC2425A841FF007CDA0D /* BeauBodyTests.swift */; };
 		A1D8EC3025A841FF007CDA0D /* BeauBodyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D8EC2F25A841FF007CDA0D /* BeauBodyUITests.swift */; };
+		A1D8EC4225A86FC7007CDA0D /* ServiceDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D8EC4125A86FC7007CDA0D /* ServiceDetail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +39,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A12F323025A975D000C1C96E /* Tutor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tutor.swift; path = ../../Downloads/Resources/Tutor.swift; sourceTree = "<group>"; };
+		A12F323125A975D000C1C96E /* Tutor.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Tutor.xcassets; path = ../../Downloads/Resources/Tutor.xcassets; sourceTree = "<group>"; };
+		A12F323425A984A800C1C96E /* DateDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateDetail.swift; sourceTree = "<group>"; };
 		A1D8EC0A25A841FC007CDA0D /* BeauBody.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeauBody.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1D8EC0D25A841FD007CDA0D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A1D8EC0F25A841FD007CDA0D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +56,7 @@
 		A1D8EC2B25A841FF007CDA0D /* BeauBodyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeauBodyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1D8EC2F25A841FF007CDA0D /* BeauBodyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeauBodyUITests.swift; sourceTree = "<group>"; };
 		A1D8EC3125A841FF007CDA0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A1D8EC4125A86FC7007CDA0D /* ServiceDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,10 +110,14 @@
 				A1D8EC0D25A841FD007CDA0D /* AppDelegate.swift */,
 				A1D8EC0F25A841FD007CDA0D /* SceneDelegate.swift */,
 				A1D8EC1125A841FD007CDA0D /* ContentView.swift */,
+				A1D8EC4125A86FC7007CDA0D /* ServiceDetail.swift */,
 				A1D8EC1325A841FF007CDA0D /* Assets.xcassets */,
 				A1D8EC1825A841FF007CDA0D /* LaunchScreen.storyboard */,
+				A12F323025A975D000C1C96E /* Tutor.swift */,
+				A12F323125A975D000C1C96E /* Tutor.xcassets */,
 				A1D8EC1B25A841FF007CDA0D /* Info.plist */,
 				A1D8EC1525A841FF007CDA0D /* Preview Content */,
+				A12F323425A984A800C1C96E /* DateDetail.swift */,
 			);
 			path = BeauBody;
 			sourceTree = "<group>";
@@ -240,6 +252,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A12F323325A975D000C1C96E /* Tutor.xcassets in Resources */,
 				A1D8EC1A25A841FF007CDA0D /* LaunchScreen.storyboard in Resources */,
 				A1D8EC1725A841FF007CDA0D /* Preview Assets.xcassets in Resources */,
 				A1D8EC1425A841FF007CDA0D /* Assets.xcassets in Resources */,
@@ -267,6 +280,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A12F323525A984A800C1C96E /* DateDetail.swift in Sources */,
+				A12F323225A975D000C1C96E /* Tutor.swift in Sources */,
+				A1D8EC4225A86FC7007CDA0D /* ServiceDetail.swift in Sources */,
 				A1D8EC0E25A841FD007CDA0D /* AppDelegate.swift in Sources */,
 				A1D8EC1025A841FD007CDA0D /* SceneDelegate.swift in Sources */,
 				A1D8EC1225A841FD007CDA0D /* ContentView.swift in Sources */,
