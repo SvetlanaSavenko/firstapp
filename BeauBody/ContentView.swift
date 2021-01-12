@@ -10,24 +10,38 @@ import SwiftUI
 
 struct ContentView: View {
 
-	init() {
-		if #available(iOS 14.0, *) {
-			// iOS 14 doesn't have extra separators below the list by default.
-		} else {
-			// To remove only extra separators below the list:
-			UITableView.appearance().tableFooterView = UIView()
+//	init() {
+//		if #available(iOS 14.0, *) {
+//			// iOS 14 doesn't have extra separators below the list by default.
+//		} else {
+//			// To remove only extra separators below the list:
+//			UITableView.appearance().tableFooterView = UIView()
+//		}
+//	}
+
+	@State private var showModal = false
+
+	var body: some View {
+		Group {
+			Button("Выбрать услугу", action:{
+				self.showModal.toggle()
+			})
+			.sheet(isPresented: $showModal) {
+				ServiceDetail(showModal: self.$showModal)
+			}
+			Text("")
 		}
 	}
 
-	var body: some View {
-		NavigationView {
-			List {
-				ServiceCell()
-				DateCell()
-			}
-			.navigationBarTitle(Text("Онлайн-запись"))
-		}
-	}
+//	var body: some View {
+//		NavigationView {
+//			List {
+//				ServiceCell()
+//				DateCell()
+//			}
+//			.navigationBarTitle(Text("Онлайн-запись"))
+//		}
+//	}
 }
 
 struct ContentView_Previews: PreviewProvider {
@@ -36,24 +50,24 @@ struct ContentView_Previews: PreviewProvider {
 	}
 }
 
-struct ServiceCell: View {
-	var body: some View {
-		NavigationLink(destination: ServiceDetail()) {
-			Image("Simon Ng")
-			Text("Услуга")
-				.font(.title)
-				.padding(20)
-		}
-	}
-}
+//struct ServiceCell: View {
+//	var body: some View {
+//		NavigationLink(destination: ServiceDetail()) {
+//			Image("Simon Ng")
+//			Text("Услуга")
+//				.font(.title)
+//				.padding(20)
+//		}
+//	}
+//}
 
-struct DateCell: View {
-	var body: some View {
-		NavigationLink(destination: DateDetail()) {
-			Image("Simon Ng")
-			Text("Дата и время")
-				.font(.title)
-				.padding(20)
-		}
-	}
-}
+//struct DateCell: View {
+//	var body: some View {
+//		NavigationLink(destination: DateDetail()) {
+//			Image("Simon Ng")
+//			Text("Дата и время")
+//				.font(.title)
+//				.padding(20)
+//		}
+//	}
+//}
