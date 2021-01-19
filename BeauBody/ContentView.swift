@@ -10,16 +10,8 @@ import SwiftUI
 
 struct ContentView: View {
 
-//	init() {
-//		if #available(iOS 14.0, *) {
-//			// iOS 14 doesn't have extra separators below the list by default.
-//		} else {
-//			// To remove only extra separators below the list:
-//			UITableView.appearance().tableFooterView = UIView()
-//		}
-//	}
-
 	@State private var showModal = false
+	@State private var services: Set<DepilationType> = []
 
 	var body: some View {
 		Group {
@@ -27,21 +19,13 @@ struct ContentView: View {
 				self.showModal.toggle()
 			})
 			.sheet(isPresented: $showModal) {
-				ServiceDetail(showModal: self.$showModal)
+				ServiceDetail(showModal: self.$showModal, services: self.$services)
 			}
-			Text("")
+			ForEach(Array(services), id: \.self) {
+				Text("\($0.rawValue)")
+			}
 		}
 	}
-
-//	var body: some View {
-//		NavigationView {
-//			List {
-//				ServiceCell()
-//				DateCell()
-//			}
-//			.navigationBarTitle(Text("Онлайн-запись"))
-//		}
-//	}
 }
 
 struct ContentView_Previews: PreviewProvider {
@@ -49,25 +33,3 @@ struct ContentView_Previews: PreviewProvider {
 		ContentView()
 	}
 }
-
-//struct ServiceCell: View {
-//	var body: some View {
-//		NavigationLink(destination: ServiceDetail()) {
-//			Image("Simon Ng")
-//			Text("Услуга")
-//				.font(.title)
-//				.padding(20)
-//		}
-//	}
-//}
-
-//struct DateCell: View {
-//	var body: some View {
-//		NavigationLink(destination: DateDetail()) {
-//			Image("Simon Ng")
-//			Text("Дата и время")
-//				.font(.title)
-//				.padding(20)
-//		}
-//	}
-//}

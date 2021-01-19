@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A12F323325A975D000C1C96E /* Tutor.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A12F323125A975D000C1C96E /* Tutor.xcassets */; };
 		A12F323525A984A800C1C96E /* DateDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12F323425A984A800C1C96E /* DateDetail.swift */; };
+		A139F62925B09BA4000AA5B9 /* FileNoName.swift in Sources */ = {isa = PBXBuildFile; fileRef = A139F62825B09BA4000AA5B9 /* FileNoName.swift */; };
 		A1D8EC0E25A841FD007CDA0D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D8EC0D25A841FD007CDA0D /* AppDelegate.swift */; };
 		A1D8EC1025A841FD007CDA0D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D8EC0F25A841FD007CDA0D /* SceneDelegate.swift */; };
 		A1D8EC1225A841FD007CDA0D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D8EC1125A841FD007CDA0D /* ContentView.swift */; };
@@ -40,6 +41,7 @@
 /* Begin PBXFileReference section */
 		A12F323125A975D000C1C96E /* Tutor.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Tutor.xcassets; path = ../../Downloads/Resources/Tutor.xcassets; sourceTree = "<group>"; };
 		A12F323425A984A800C1C96E /* DateDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateDetail.swift; sourceTree = "<group>"; };
+		A139F62825B09BA4000AA5B9 /* FileNoName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileNoName.swift; sourceTree = "<group>"; };
 		A1D8EC0A25A841FC007CDA0D /* BeauBody.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeauBody.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1D8EC0D25A841FD007CDA0D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A1D8EC0F25A841FD007CDA0D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				A1D8EC1B25A841FF007CDA0D /* Info.plist */,
 				A1D8EC1525A841FF007CDA0D /* Preview Content */,
 				A12F323425A984A800C1C96E /* DateDetail.swift */,
+				A139F62825B09BA4000AA5B9 /* FileNoName.swift */,
 			);
 			path = BeauBody;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 				A12F323525A984A800C1C96E /* DateDetail.swift in Sources */,
 				A1D8EC4225A86FC7007CDA0D /* ServiceDetail.swift in Sources */,
 				A1D8EC0E25A841FD007CDA0D /* AppDelegate.swift in Sources */,
+				A139F62925B09BA4000AA5B9 /* FileNoName.swift in Sources */,
 				A1D8EC1025A841FD007CDA0D /* SceneDelegate.swift in Sources */,
 				A1D8EC1225A841FD007CDA0D /* ContentView.swift in Sources */,
 			);

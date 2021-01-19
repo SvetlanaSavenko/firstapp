@@ -9,11 +9,12 @@
 import SwiftUI
 
 struct ServiceDetail: View {
-
 	@Binding var showModal: Bool
-    var body: some View {
+	@Binding var services: Set<DepilationType>
+
+	var body: some View {
 		VStack {
-			DepilationMenu()
+			DepilationMenu(services: $services)
 			Button("Готово"){
 				self.showModal.toggle()
 			}
@@ -21,8 +22,34 @@ struct ServiceDetail: View {
 	}
 }
 
+enum DepilationType: String {
+    case waxShinHip = "Услуга 1"
+    case sugaringBikiniClassic = "Услуга 2"
+	case armpits = "Услуга 3"
+}
+
+//extension DepilationType: Hashable {
+//
+//    func hash(into hasher: inout Hasher) {
+//
+//        switch self {
+//        case .waxShinHip:
+//            hasher.combine(1)
+//        case .sugaringBikiniClassic:
+//            hasher.combine(2)
+//        case .armpits:
+//            hasher.combine(3)
+//        }
+//    }
+//}
+
+let allDepilationTypes: [DepilationType] = [.waxShinHip, .sugaringBikiniClassic, .armpits]
+
 struct DepilationMenu: View {
 	@State var expand = true
+
+	@Binding var services: Set<DepilationType>
+
 	var body: some View {
 		VStack() {
 			HStack() {
@@ -32,40 +59,30 @@ struct DepilationMenu: View {
 				self.expand.toggle()
 			}
 			if expand {
-				CheckboxField(label: .waxShinHip, callback: checkboxSelected)
-				CheckboxField(label: .sugaringBikiniClassic, callback: checkboxSelected)
-				CheckboxField(label: .armpits, callback: checkboxSelected)
+				ForEach(allDepilationTypes, id: \.self) { depilationType in
+					CheckboxField(label: depilationType, callback: { if $0 {self.services.insert(depilationType)} else { self.services.remove(depilationType) }})
+				}
 			}
 		}
 	}
-
-	func checkboxSelected(id: String, isMarked: Bool) {
-		   print("\(id) is marked: \(isMarked)")
-	   }
 }
 
-enum DepilationTypes: String {
-    case waxShinHip = "Услуга 1"
-    case sugaringBikiniClassic = "Услуга 2"
-	case armpits = "Услуга 3"
-}
-
+//self.services.remove(depilationType)
 struct CheckboxField: View {
 	let label: String
-	let callback: (String, Bool)->()
+	let callback: (Bool)->()
 	init(
-		label: DepilationTypes,
-		callback: @escaping (String, Bool)->()
+		label: DepilationType,
+		callback: @escaping (Bool)->()
 	) {
 		self.label = label.rawValue
 		self.callback = callback
 	}
-
 	@State var isMarked:Bool = false
 	var body: some View {
 		Button(action:{
 			self.isMarked.toggle()
-			self.callback(self.label, self.isMarked)
+			self.callback(self.isMarked)
 		}) {
 			HStack() {
 				Image(systemName: self.isMarked ? "checkmark.square" : "square")
