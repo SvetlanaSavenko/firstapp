@@ -10,8 +10,8 @@ import SwiftUI
 
 struct ContentView: View {
 
+	@State private var showCalendarModal = false
 	@State private var showServiceModal = false
-	@State private var showСalendarModal = false
 	@State private var services: [DepilationType] = []
 
 	var body: some View {
@@ -23,10 +23,10 @@ struct ContentView: View {
 				ServiceDetail(showServiceModal: self.$showServiceModal, services: self.$services)
 			}
 			Button("Выбрать время", action:{
-				self.showСalendarModal.toggle()
+				self.showCalendarModal.toggle()
 			})
-			.sheet(isPresented: $showСalendarModal) {
-				CalendarView(showСalendarModal: self.$showСalendarModal)
+			.sheet(isPresented: $showCalendarModal) {
+				CalendarDetail(showСalendarModal: self.$showCalendarModal)
 			}
 			ForEach(services, id: \.self) {
 				Text("\($0.rawValue)")

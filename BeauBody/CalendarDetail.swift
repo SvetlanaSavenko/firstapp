@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct CalendarView: View {
+struct CalendarDetail: View {
 	@Binding var showСalendarModal: Bool
 	@State private var date = Date()
 
@@ -26,7 +26,7 @@ struct CalendarView: View {
 	}
 }
 
-struct CalendarView_Previews: PreviewProvider {
+struct CalendarDetail_Previews: PreviewProvider {
     static var previews: some View {
 		/*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
     }
