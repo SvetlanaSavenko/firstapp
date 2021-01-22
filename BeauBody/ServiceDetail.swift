@@ -28,26 +28,10 @@ enum DepilationType: String {
 	case armpits = "Услуга 3"
 }
 
-//extension DepilationType: Hashable {
-//
-//    func hash(into hasher: inout Hasher) {
-//
-//        switch self {
-//        case .waxShinHip:
-//            hasher.combine(1)
-//        case .sugaringBikiniClassic:
-//            hasher.combine(2)
-//        case .armpits:
-//            hasher.combine(3)
-//        }
-//    }
-//}
-
-let allDepilationTypes: [DepilationType] = [.waxShinHip, .sugaringBikiniClassic, .armpits]
+let allDepilationTypes: Set<DepilationType> = [.waxShinHip, .sugaringBikiniClassic, .armpits]
 
 struct DepilationMenu: View {
 	@State var expand = true
-
 	@Binding var services: Set<DepilationType>
 
 	var body: some View {
@@ -59,33 +43,25 @@ struct DepilationMenu: View {
 				self.expand.toggle()
 			}
 			if expand {
-				ForEach(allDepilationTypes, id: \.self) { depilationType in
-					CheckboxField(label: depilationType, callback: { if $0 {self.services.insert(depilationType)} else { self.services.remove(depilationType) }})
+				ForEach(Array(allDepilationTypes), id: \.self) { depilationType in
+					CheckboxField(state: services.contains(depilationType), label: depilationType.rawValue, callback: { if $0 {self.services.insert(depilationType)} else { self.services.remove(depilationType) }})
 				}
 			}
 		}
 	}
 }
 
-//self.services.remove(depilationType)
 struct CheckboxField: View {
+	@State var state: Bool
 	let label: String
 	let callback: (Bool)->()
-	init(
-		label: DepilationType,
-		callback: @escaping (Bool)->()
-	) {
-		self.label = label.rawValue
-		self.callback = callback
-	}
-	@State var isMarked:Bool = false
 	var body: some View {
 		Button(action:{
-			self.isMarked.toggle()
-			self.callback(self.isMarked)
+			self.state.toggle()
+			self.callback(self.state)
 		}) {
 			HStack() {
-				Image(systemName: self.isMarked ? "checkmark.square" : "square")
+				Image(systemName: self.state ? "checkmark.square" : "square")
 				Text(label)
 			}
 		}
