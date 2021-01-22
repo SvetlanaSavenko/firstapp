@@ -10,18 +10,18 @@ import SwiftUI
 
 struct ContentView: View {
 
-	@State private var showModal = false
-	@State private var services: Set<DepilationType> = []
+	@State private var showServiceModal = false
+	@State private var services: [DepilationType] = []
 
 	var body: some View {
 		Group {
 			Button("Выбрать услугу", action:{
-				self.showModal.toggle()
+				self.showServiceModal.toggle()
 			})
-			.sheet(isPresented: $showModal) {
-				ServiceDetail(showModal: self.$showModal, services: self.$services)
+			.sheet(isPresented: $showServiceModal) {
+				ServiceDetail(showServiceModal: self.$showServiceModal, services: self.$services)
 			}
-			ForEach(Array(services), id: \.self) {
+			ForEach(services, id: \.self) {
 				Text("\($0.rawValue)")
 			}
 		}

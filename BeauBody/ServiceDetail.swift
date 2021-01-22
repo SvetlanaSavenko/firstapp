@@ -9,14 +9,14 @@
 import SwiftUI
 
 struct ServiceDetail: View {
-	@Binding var showModal: Bool
-	@Binding var services: Set<DepilationType>
+	@Binding var showServiceModal: Bool
+	@Binding var services: [DepilationType]
 
 	var body: some View {
 		VStack {
 			DepilationMenu(services: $services)
 			Button("Готово"){
-				self.showModal.toggle()
+				self.showServiceModal.toggle()
 			}
 		}
 	}
@@ -28,11 +28,11 @@ enum DepilationType: String {
 	case armpits = "Услуга 3"
 }
 
-let allDepilationTypes: Set<DepilationType> = [.waxShinHip, .sugaringBikiniClassic, .armpits]
+let allDepilationTypes: [DepilationType] = [.waxShinHip, .sugaringBikiniClassic, .armpits]
 
 struct DepilationMenu: View {
 	@State var expand = true
-	@Binding var services: Set<DepilationType>
+	@Binding var services: [DepilationType]
 
 	var body: some View {
 		VStack() {
@@ -43,8 +43,17 @@ struct DepilationMenu: View {
 				self.expand.toggle()
 			}
 			if expand {
-				ForEach(Array(allDepilationTypes), id: \.self) { depilationType in
-					CheckboxField(state: services.contains(depilationType), label: depilationType.rawValue, callback: { if $0 {self.services.insert(depilationType)} else { self.services.remove(depilationType) }})
+				ForEach(allDepilationTypes, id: \.self) { depilationType in
+					CheckboxField(state: services.contains(depilationType),
+								  label: depilationType.rawValue,
+								  callback: {
+									if $0 { self.services.append(depilationType)}
+									else {
+										if let index = services.firstIndex(of: depilationType) {
+											services.remove(at: index)
+										}
+									}}
+								)
 				}
 			}
 		}
