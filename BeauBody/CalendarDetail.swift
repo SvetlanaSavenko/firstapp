@@ -10,18 +10,21 @@ import SwiftUI
 
 struct CalendarDetail: View {
 	@Binding var showСalendarModal: Bool
-	@State private var date = Date()
+	@Binding var selectedDate: Date
 
 	var body: some View {
 		if #available(iOS 14.0, *) {
 			DatePicker(
 				"Start Date",
-				selection: $date,
+				selection: $selectedDate,
 				displayedComponents: [.date]
 			)
 			.datePickerStyle(GraphicalDatePickerStyle())
 		} else {
 			// Fallback on earlier versions
+		}
+		Button("Готово"){
+			self.showСalendarModal.toggle()
 		}
 	}
 }

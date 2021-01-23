@@ -13,6 +13,7 @@ struct ContentView: View {
 	@State private var showCalendarModal = false
 	@State private var showServiceModal = false
 	@State private var services: [DepilationType] = []
+	@State private var selectedDate: Date? = nil
 
 	var body: some View {
 		Group {
@@ -26,10 +27,17 @@ struct ContentView: View {
 				self.showCalendarModal.toggle()
 			})
 			.sheet(isPresented: $showCalendarModal) {
-				CalendarDetail(showСalendarModal: self.$showCalendarModal)
+				let displayedDate = Binding<Date>(
+					get: { selectedDate ?? Date() },
+					set: { selectedDate = $0 }
+				)
+				CalendarDetail(showСalendarModal: self.$showCalendarModal, selectedDate: displayedDate)
 			}
 			ForEach(services, id: \.self) {
 				Text("\($0.rawValue)")
+			}
+			if let date = selectedDate {
+				Text("\(date)")
 			}
 		}
 	}
