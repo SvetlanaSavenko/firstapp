@@ -11,9 +11,11 @@ import SwiftUI
 struct ContentView: View {
 
 	@State private var showCalendarModal = false
-	@State private var showServiceModal = false
+	@State private var showServiceModal = false 
 	@State private var services: [DepilationType] = []
 	@State private var selectedDate: Date? = nil
+
+	private var viewModel: ViewModelContent = ViewModelContent()
 
 	var body: some View {
 		Group {
@@ -38,6 +40,11 @@ struct ContentView: View {
 			}
 			if let date = selectedDate {
 				Text("\(date)")
+			}
+			if services.count > 0 && selectedDate != nil {
+				Button("Записаться", action:{
+					self.viewModel.saveAppointment(services: services, date: selectedDate!)
+				})
 			}
 		}
 	}

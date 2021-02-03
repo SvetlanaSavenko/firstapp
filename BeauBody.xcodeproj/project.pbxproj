@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A12F323525A984A800C1C96E /* DateDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12F323425A984A800C1C96E /* DateDetail.swift */; };
-		A139F62925B09BA4000AA5B9 /* FileNoName.swift in Sources */ = {isa = PBXBuildFile; fileRef = A139F62825B09BA4000AA5B9 /* FileNoName.swift */; };
+		A106EF7725C848D100594864 /* ViewModelContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A106EF7625C848D100594864 /* ViewModelContent.swift */; };
+		A106EF8525C84D8D00594864 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A106EF8425C84D8D00594864 /* Assets.xcassets */; };
+		A139F62925B09BA4000AA5B9 /* Appointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A139F62825B09BA4000AA5B9 /* Appointment.swift */; };
 		A1A6709925BB241D0068AACB /* CalendarDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A6709825BB241D0068AACB /* CalendarDetail.swift */; };
 		A1D8EC0E25A841FD007CDA0D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D8EC0D25A841FD007CDA0D /* AppDelegate.swift */; };
 		A1D8EC1025A841FD007CDA0D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D8EC0F25A841FD007CDA0D /* SceneDelegate.swift */; };
 		A1D8EC1225A841FD007CDA0D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D8EC1125A841FD007CDA0D /* ContentView.swift */; };
-		A1D8EC1425A841FF007CDA0D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1D8EC1325A841FF007CDA0D /* Assets.xcassets */; };
 		A1D8EC1725A841FF007CDA0D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1D8EC1625A841FF007CDA0D /* Preview Assets.xcassets */; };
 		A1D8EC1A25A841FF007CDA0D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1D8EC1825A841FF007CDA0D /* LaunchScreen.storyboard */; };
 		A1D8EC2525A841FF007CDA0D /* BeauBodyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D8EC2425A841FF007CDA0D /* BeauBodyTests.swift */; };
@@ -39,14 +39,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A12F323425A984A800C1C96E /* DateDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateDetail.swift; sourceTree = "<group>"; };
-		A139F62825B09BA4000AA5B9 /* FileNoName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileNoName.swift; sourceTree = "<group>"; };
+		A106EF7625C848D100594864 /* ViewModelContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelContent.swift; sourceTree = "<group>"; };
+		A106EF8425C84D8D00594864 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../.Trash/Assets.xcassets; sourceTree = "<group>"; };
+		A139F62825B09BA4000AA5B9 /* Appointment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appointment.swift; sourceTree = "<group>"; };
 		A1A6709825BB241D0068AACB /* CalendarDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDetail.swift; sourceTree = "<group>"; };
 		A1D8EC0A25A841FC007CDA0D /* BeauBody.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeauBody.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1D8EC0D25A841FD007CDA0D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A1D8EC0F25A841FD007CDA0D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		A1D8EC1125A841FD007CDA0D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		A1D8EC1325A841FF007CDA0D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A1D8EC1625A841FF007CDA0D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A1D8EC1925A841FF007CDA0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A1D8EC1B25A841FF007CDA0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -111,13 +111,13 @@
 				A1D8EC0F25A841FD007CDA0D /* SceneDelegate.swift */,
 				A1D8EC1125A841FD007CDA0D /* ContentView.swift */,
 				A1D8EC4125A86FC7007CDA0D /* ServiceDetail.swift */,
-				A1D8EC1325A841FF007CDA0D /* Assets.xcassets */,
+				A1A6709825BB241D0068AACB /* CalendarDetail.swift */,
+				A139F62825B09BA4000AA5B9 /* Appointment.swift */,
+				A106EF7625C848D100594864 /* ViewModelContent.swift */,
 				A1D8EC1825A841FF007CDA0D /* LaunchScreen.storyboard */,
+				A106EF8425C84D8D00594864 /* Assets.xcassets */,
 				A1D8EC1B25A841FF007CDA0D /* Info.plist */,
 				A1D8EC1525A841FF007CDA0D /* Preview Content */,
-				A12F323425A984A800C1C96E /* DateDetail.swift */,
-				A139F62825B09BA4000AA5B9 /* FileNoName.swift */,
-				A1A6709825BB241D0068AACB /* CalendarDetail.swift */,
 			);
 			path = BeauBody;
 			sourceTree = "<group>";
@@ -253,8 +253,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1D8EC1A25A841FF007CDA0D /* LaunchScreen.storyboard in Resources */,
+				A106EF8525C84D8D00594864 /* Assets.xcassets in Resources */,
 				A1D8EC1725A841FF007CDA0D /* Preview Assets.xcassets in Resources */,
-				A1D8EC1425A841FF007CDA0D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,12 +279,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A12F323525A984A800C1C96E /* DateDetail.swift in Sources */,
 				A1A6709925BB241D0068AACB /* CalendarDetail.swift in Sources */,
 				A1D8EC4225A86FC7007CDA0D /* ServiceDetail.swift in Sources */,
 				A1D8EC0E25A841FD007CDA0D /* AppDelegate.swift in Sources */,
-				A139F62925B09BA4000AA5B9 /* FileNoName.swift in Sources */,
+				A139F62925B09BA4000AA5B9 /* Appointment.swift in Sources */,
 				A1D8EC1025A841FD007CDA0D /* SceneDelegate.swift in Sources */,
+				A106EF7725C848D100594864 /* ViewModelContent.swift in Sources */,
 				A1D8EC1225A841FD007CDA0D /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
