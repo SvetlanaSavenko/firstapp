@@ -11,11 +11,9 @@ import SwiftUI
 struct ContentView: View {
 
 	@State private var showCalendarModal = false
-	@State private var showServiceModal = false 
-	@State private var services: [DepilationType] = []
-	@State private var selectedDate: Date? = nil
+	@State private var showServiceModal = false
 
-	private var viewModel: ViewModelContent = ViewModelContent()
+	@ObservedObject private var viewModel: ViewModelContent = ViewModelContent()
 
 	var body: some View {
 		Group {
@@ -23,27 +21,27 @@ struct ContentView: View {
 				self.showServiceModal.toggle()
 			})
 			.sheet(isPresented: $showServiceModal) {
-				ServiceDetail(showServiceModal: self.$showServiceModal, services: self.$services)
+				ServiceDetail(showServiceModal: self.$showServiceModal, services: $viewModel.services)
 			}
 			Button("Выбрать время", action:{
 				self.showCalendarModal.toggle()
 			})
 			.sheet(isPresented: $showCalendarModal) {
 				let displayedDate = Binding<Date>(
-					get: { selectedDate ?? Date() },
-					set: { selectedDate = $0 }
+					get: { viewModel.selectedDate ?? Date() },
+					set: { viewModel.selectedDate = $0 }
 				)
 				CalendarDetail(showСalendarModal: self.$showCalendarModal, selectedDate: displayedDate)
 			}
-			ForEach(services, id: \.self) {
+			ForEach(viewModel.services, id: \.self) {
 				Text("\($0.rawValue)")
 			}
-			if let date = selectedDate {
+			if let date = viewModel.selectedDate {
 				Text("\(date)")
 			}
-			if services.count > 0 && selectedDate != nil {
+			if viewModel.isAppointmentButtonVisible {
 				Button("Записаться", action:{
-					self.viewModel.saveAppointment(services: services, date: selectedDate!)
+					self.viewModel.saveAppointment()
 				})
 			}
 		}

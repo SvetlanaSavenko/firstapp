@@ -8,8 +8,22 @@
 
 import Foundation
 
-class ViewModelContent {
-	
+class ViewModelContent: ObservableObject {
+
+	@Published var services: [DepilationType] = [] {
+		didSet { updateButtonVisible() }
+	}
+
+	@Published var selectedDate: Date? = nil {
+		didSet { updateButtonVisible() }
+	}
+
+	@Published var isAppointmentButtonVisible = false // private set
+
+	private func updateButtonVisible() {
+		self.isAppointmentButtonVisible = services.count > 0 && selectedDate != nil
+	}
+
 	let userDefaults: UserDefaults
 
 	init(userDefaults: UserDefaults = .standard) {
@@ -20,8 +34,13 @@ class ViewModelContent {
 		userDefaults.set(value, forKey: key)
 	}
 
-	func saveAppointment(services: [DepilationType], date: Date) {
-		let appointment = Appointment(services: services, date: date)
+	func saveAppointment() {
+		let date = self.selectedDate
+		if (date == nil || services.isEmpty) {
+			return
+		}
+
+		let appointment = Appointment(services: services, date: date!)
 		do {
 			let encoder = JSONEncoder()
 			let data = try encoder.encode(appointment)
