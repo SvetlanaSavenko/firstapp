@@ -10,6 +10,10 @@
 		A106EF7725C848D100594864 /* ViewModelContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A106EF7625C848D100594864 /* ViewModelContent.swift */; };
 		A106EF8525C84D8D00594864 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A106EF8425C84D8D00594864 /* Assets.xcassets */; };
 		A139F62925B09BA4000AA5B9 /* Appointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A139F62825B09BA4000AA5B9 /* Appointment.swift */; };
+		A1423C7525D7E364009FCE1D /* ViewModelContentNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1423C7425D7E364009FCE1D /* ViewModelContentNew.swift */; };
+		A1423C7A25D7E589009FCE1D /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1423C7925D7E589009FCE1D /* Container.swift */; };
+		A1423C8525D7E66C009FCE1D /* AppointmentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1423C8425D7E66C009FCE1D /* AppointmentRepository.swift */; };
+		A1423C9025D7F550009FCE1D /* UserSettingsAppointmentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1423C8F25D7F54F009FCE1D /* UserSettingsAppointmentRepository.swift */; };
 		A17A50EE25CFA6A400EE6EA8 /* ViewModelServiceDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17A50ED25CFA6A400EE6EA8 /* ViewModelServiceDetail.swift */; };
 		A17A50F325CFA6C000EE6EA8 /* ViewModelCalendarDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17A50F225CFA6C000EE6EA8 /* ViewModelCalendarDetail.swift */; };
 		A17A50FB25CFC88B00EE6EA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A17A50FA25CFC88B00EE6EA8 /* Assets.xcassets */; };
@@ -45,6 +49,10 @@
 		A106EF7625C848D100594864 /* ViewModelContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelContent.swift; sourceTree = "<group>"; };
 		A106EF8425C84D8D00594864 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../.Trash/Assets.xcassets; sourceTree = "<group>"; };
 		A139F62825B09BA4000AA5B9 /* Appointment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appointment.swift; sourceTree = "<group>"; };
+		A1423C7425D7E364009FCE1D /* ViewModelContentNew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelContentNew.swift; sourceTree = "<group>"; };
+		A1423C7925D7E589009FCE1D /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
+		A1423C8425D7E66C009FCE1D /* AppointmentRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentRepository.swift; sourceTree = "<group>"; };
+		A1423C8F25D7F54F009FCE1D /* UserSettingsAppointmentRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsAppointmentRepository.swift; sourceTree = "<group>"; };
 		A17A50ED25CFA6A400EE6EA8 /* ViewModelServiceDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelServiceDetail.swift; sourceTree = "<group>"; };
 		A17A50F225CFA6C000EE6EA8 /* ViewModelCalendarDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelCalendarDetail.swift; sourceTree = "<group>"; };
 		A17A50FA25CFC88B00EE6EA8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -118,10 +126,14 @@
 				A1D8EC1125A841FD007CDA0D /* ContentView.swift */,
 				A1D8EC4125A86FC7007CDA0D /* ServiceDetail.swift */,
 				A1A6709825BB241D0068AACB /* CalendarDetail.swift */,
-				A139F62825B09BA4000AA5B9 /* Appointment.swift */,
 				A106EF7625C848D100594864 /* ViewModelContent.swift */,
+				A1423C7425D7E364009FCE1D /* ViewModelContentNew.swift */,
 				A17A50ED25CFA6A400EE6EA8 /* ViewModelServiceDetail.swift */,
 				A17A50F225CFA6C000EE6EA8 /* ViewModelCalendarDetail.swift */,
+				A1423C7925D7E589009FCE1D /* Container.swift */,
+				A1423C8425D7E66C009FCE1D /* AppointmentRepository.swift */,
+				A139F62825B09BA4000AA5B9 /* Appointment.swift */,
+				A1423C8F25D7F54F009FCE1D /* UserSettingsAppointmentRepository.swift */,
 				A1D8EC1825A841FF007CDA0D /* LaunchScreen.storyboard */,
 				A106EF8425C84D8D00594864 /* Assets.xcassets */,
 				A17A50FA25CFC88B00EE6EA8 /* Assets.xcassets */,
@@ -289,14 +301,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1423C9025D7F550009FCE1D /* UserSettingsAppointmentRepository.swift in Sources */,
 				A1A6709925BB241D0068AACB /* CalendarDetail.swift in Sources */,
+				A1423C8525D7E66C009FCE1D /* AppointmentRepository.swift in Sources */,
 				A1D8EC4225A86FC7007CDA0D /* ServiceDetail.swift in Sources */,
 				A1D8EC0E25A841FD007CDA0D /* AppDelegate.swift in Sources */,
+				A1423C7525D7E364009FCE1D /* ViewModelContentNew.swift in Sources */,
 				A139F62925B09BA4000AA5B9 /* Appointment.swift in Sources */,
 				A1D8EC1025A841FD007CDA0D /* SceneDelegate.swift in Sources */,
 				A17A50F325CFA6C000EE6EA8 /* ViewModelCalendarDetail.swift in Sources */,
 				A106EF7725C848D100594864 /* ViewModelContent.swift in Sources */,
 				A1D8EC1225A841FD007CDA0D /* ContentView.swift in Sources */,
+				A1423C7A25D7E589009FCE1D /* Container.swift in Sources */,
 				A17A50EE25CFA6A400EE6EA8 /* ViewModelServiceDetail.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

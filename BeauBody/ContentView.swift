@@ -14,6 +14,7 @@ struct ContentView: View {
 	@State private var showServiceModal = false
 
 	@ObservedObject private var viewModel: ViewModelContent = ViewModelContent()
+	@ObservedObject private var vm: ViewModelContentNew = Container.instance.provideContentViewModel()
 
 	var body: some View {
 		Group {
@@ -42,8 +43,15 @@ struct ContentView: View {
 			if viewModel.isAppointmentButtonVisible {
 				Button("Записаться", action:{
 					self.viewModel.saveAppointment()
+					self.vm.getAppointments()
 				})
 			}
+			ForEach(vm.currentAppointment?.services ?? [DepilationType.pusto], id: \.self) {
+				Text("Вы записаны: \($0.rawValue)")
+			}
+		}
+		.onAppear {
+			self.vm.getAppointments()
 		}
 	}
 }

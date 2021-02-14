@@ -26,6 +26,7 @@ enum DepilationType: String, Codable {
     case waxShinHip = "Услуга 1"
     case sugaringBikiniClassic = "Услуга 2"
 	case armpits = "Услуга 3"
+	case pusto = "Пусто"
 }
 
 let allDepilationTypes: [DepilationType] = [.waxShinHip, .sugaringBikiniClassic, .armpits]
