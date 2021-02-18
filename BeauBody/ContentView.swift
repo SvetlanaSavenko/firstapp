@@ -43,7 +43,6 @@ struct ContentView: View {
 			if viewModel.isAppointmentButtonVisible {
 				Button("Записаться", action:{
 					self.viewModel.saveAppointment()
-					self.vm.getAppointments()
 				})
 			}
 			ForEach(vm.currentAppointment?.services ?? [DepilationType.pusto], id: \.self) {
@@ -51,7 +50,7 @@ struct ContentView: View {
 			}
 		}
 		.onAppear {
-			self.vm.getAppointments()
+			self.vm.loadAppointments()
 		}
 	}
 }

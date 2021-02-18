@@ -17,13 +17,9 @@ class ViewModelContentNew: ObservableObject {
 		self.repos = appointment
 	}
 
-	func getAppointments() {
+	func loadAppointments() {
 		self.repos.getAppointment() // обновила appo в модели
 		self.currentAppointment = self.repos.appo
-	}
-
-	func saveAppointments(appointment: Appointment) {
-		self.repos.saveAppointment(appointment: appointment)
 	}
 
 }

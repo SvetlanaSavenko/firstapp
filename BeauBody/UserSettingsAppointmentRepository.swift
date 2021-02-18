@@ -8,7 +8,7 @@
 
 import Foundation
 class UserSettingsAppointmentRepository: AppointmentRepository, ObservableObject {
-
+//appo не надо
 	@Published var appo: Appointment? = nil
 
 	func getAppointment() {
