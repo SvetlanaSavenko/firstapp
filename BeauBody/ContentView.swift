@@ -50,7 +50,7 @@ struct ContentView: View {
 			}
 		}
 		.onAppear {
-			self.vm.loadAppointments()
+			self.vm.loadAppointmentss()
 		}
 	}
 }

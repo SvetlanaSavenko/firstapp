@@ -8,14 +8,12 @@
 
 import Foundation
 class UserSettingsAppointmentRepository: AppointmentRepository, ObservableObject {
-//appo не надо
-	@Published var appo: Appointment? = nil
 
-	func getAppointment() {
+	func getAppointmentt(callback: (Appointment) -> ()) {
 		let data = userDefaults.object(forKey: "appointments")
 		do {
 			let appointment = try JSONDecoder().decode(Appointment.self, from: data as! Data)
-			self.appo = appointment
+			callback(appointment)
 		} catch {
 			print("Unable to Decode Note (\(error))")
 		}
