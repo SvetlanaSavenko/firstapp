@@ -8,7 +8,14 @@
 
 import Foundation
 
-class ViewModelServiceDetail {
+class ViewModelServiceDetail: ObservableObject {
 
+	@Published var selectedServices: [DepilationTyype] = []
+	let allServices: [DepilationTyype] = DepilationTyype.allCases
 
+	init(unfinishedAppointment: UnfinishedAppointmentHolder) {
+		if let services = unfinishedAppointment.appointment?.services {
+			self.selectedServices = services
+		}
+	}
 }

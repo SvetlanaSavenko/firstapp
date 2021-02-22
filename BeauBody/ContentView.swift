@@ -22,7 +22,7 @@ struct ContentView: View {
 				self.showServiceModal.toggle()
 			})
 			.sheet(isPresented: $showServiceModal) {
-				ServiceDetail(showServiceModal: self.$showServiceModal, services: $viewModel.services)
+				ServiceDetail(showServiceModal: self.$showServiceModal)
 			}
 			Button("Выбрать время", action:{
 				self.showCalendarModal.toggle()
@@ -50,7 +50,7 @@ struct ContentView: View {
 			}
 		}
 		.onAppear {
-			self.vm.loadAppointmentss()
+			self.vm.loadAppointments()
 		}
 	}
 }

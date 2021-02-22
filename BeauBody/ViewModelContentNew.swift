@@ -17,8 +17,13 @@ class ViewModelContentNew: ObservableObject {
 		self.repos = appointment
 	}
 
-	func loadAppointmentss() {
+	// weak self
+	func loadAppointments() {
 		self.repos.getAppointmentt(callback: { self.currentAppointment = $0 })
 	}
+
+//	func saveAppointments() {
+//		self.repos.getAppointmentt(callback: { self.currentAppointment = $0 })
+//	}
 
 }

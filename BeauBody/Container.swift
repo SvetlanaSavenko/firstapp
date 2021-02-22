@@ -13,9 +13,14 @@ class Container {
 	private init() {}
 
 	private let userSettingsAppoRepository: AppointmentRepository = UserSettingsAppointmentRepository()
+	private let unfinishedAppointment = UnfinishedAppointmentHolder()
 
 	func provideContentViewModel() -> ViewModelContentNew {
 		return ViewModelContentNew(appointment: userSettingsAppoRepository)
+	}
+
+	func provideServiceViewModel() -> ViewModelServiceDetail {
+		return ViewModelServiceDetail(unfinishedAppointment: unfinishedAppointment)
 	}
 
 }

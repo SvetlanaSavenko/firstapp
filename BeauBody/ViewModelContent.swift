@@ -10,7 +10,7 @@ import Foundation
 
 class ViewModelContent: ObservableObject {
 
-	@Published var services: [DepilationType] = [] {
+	@Published var services: [DepilationTyype] = [] {
 		didSet { updateButtonVisible() }
 	}
 

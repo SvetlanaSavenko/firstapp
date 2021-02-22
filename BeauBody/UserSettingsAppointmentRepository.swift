@@ -19,13 +19,13 @@ class UserSettingsAppointmentRepository: AppointmentRepository, ObservableObject
 		}
 	}
 
-	let userDefaults: UserDefaults
+	private let userDefaults: UserDefaults
 
 	init(userDefaults: UserDefaults = .standard) {
 		self.userDefaults = userDefaults
 	}
 
-	func saveValue(forKey key: String, value: Any) {
+	private func saveValue(forKey key: String, value: Any) {
 		userDefaults.set(value, forKey: key)
 	}
 

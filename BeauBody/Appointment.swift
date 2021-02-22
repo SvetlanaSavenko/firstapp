@@ -1,8 +1,12 @@
 import Foundation
-// model
+
 	struct Appointment: Codable {
-		let services: [DepilationType]
+		let services: [DepilationTyype]
 		let date: Date
 	}
 
-
+enum DepilationTyype: String, CaseIterable, Codable {
+	case waxShinHip = "Голень"
+	case sugaringBikiniClassic = "Бикини"
+	case armpits = "Подмышки"
+}
