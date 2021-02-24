@@ -13,7 +13,6 @@ struct ContentView: View {
 	@State private var showCalendarModal = false
 	@State private var showServiceModal = false
 
-	@ObservedObject private var viewModel: ViewModelContent = ViewModelContent()
 	@ObservedObject private var vm: ViewModelContentNew = Container.instance.provideContentViewModel()
 
 	var body: some View {
@@ -28,21 +27,17 @@ struct ContentView: View {
 				self.showCalendarModal.toggle()
 			})
 			.sheet(isPresented: $showCalendarModal) {
-				let displayedDate = Binding<Date>(
-					get: { viewModel.selectedDate ?? Date() },
-					set: { viewModel.selectedDate = $0 }
-				)
-				CalendarDetail(showСalendarModal: self.$showCalendarModal, selectedDate: displayedDate)
+				CalendarDetail(showСalendarModal: self.$showCalendarModal)
 			}
-			ForEach(viewModel.services, id: \.self) {
+			ForEach(vm.unfinishedAppointment?.services ?? [DepilationType.pusto], id: \.self) {
 				Text("\($0.rawValue)")
 			}
-			if let date = viewModel.selectedDate {
+			if let date = vm.unfinishedAppointment?.date {
 				Text("\(date)")
 			}
-			if viewModel.isAppointmentButtonVisible {
+			if vm.isAppointmentButtonVisible {
 				Button("Записаться", action:{
-					self.viewModel.saveAppointment()
+					self.vm.saveAppointment()
 				})
 			}
 			ForEach(vm.currentAppointment?.services ?? [DepilationType.pusto], id: \.self) {

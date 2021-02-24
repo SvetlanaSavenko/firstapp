@@ -9,14 +9,16 @@
 import SwiftUI
 
 struct CalendarDetail: View {
+
+	@ObservedObject private var vm: ViewModelCalendarDetail = Container.instance.provideCalendarViewModel()
+	
 	@Binding var showСalendarModal: Bool
-	@Binding var selectedDate: Date
 
 	var body: some View {
 		if #available(iOS 14.0, *) {
 			DatePicker(
 				"Start Date",
-				selection: $selectedDate,
+				selection: $vm.selectedDate,
 				displayedComponents: [.date]
 			)
 			.datePickerStyle(GraphicalDatePickerStyle())

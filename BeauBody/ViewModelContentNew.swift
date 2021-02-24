@@ -12,8 +12,12 @@ class ViewModelContentNew: ObservableObject {
 
 	var repos: AppointmentRepository
 	@Published var currentAppointment: Appointment? = nil
+	@Published var unfinishedServices: [DepilationTyype] = []
+	@Published var unfinishedDate: Date? = nil
 
-	init(appointment: AppointmentRepository) {
+	@Published var isAppointmentButtonVisible = false // private set
+
+	init(appointment: AppointmentRepository, unfinishedAppointment: UnfinishedAppointmentHolder) {
 		self.repos = appointment
 	}
 
@@ -22,8 +26,8 @@ class ViewModelContentNew: ObservableObject {
 		self.repos.getAppointmentt(callback: { self.currentAppointment = $0 })
 	}
 
-//	func saveAppointments() {
-//		self.repos.getAppointmentt(callback: { self.currentAppointment = $0 })
-//	}
+	func saveAppointments() {
+		
+	}
 
 }
