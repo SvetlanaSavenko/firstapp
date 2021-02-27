@@ -16,7 +16,7 @@ class Container {
 	private let unfinishedAppointment = UnfinishedAppointmentHolder()
 
 	func provideContentViewModel() -> ViewModelContentNew {
-		return ViewModelContentNew(appointment: userSettingsAppoRepository, unfinishedAppointment: unfinishedAppointment)
+		return ViewModelContentNew(currentAppointment: userSettingsAppoRepository, unfinishedAppointment: unfinishedAppointment)
 	}
 
 	func provideServiceViewModel() -> ViewModelServiceDetail {

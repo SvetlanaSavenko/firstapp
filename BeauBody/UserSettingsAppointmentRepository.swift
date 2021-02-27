@@ -9,7 +9,7 @@
 import Foundation
 class UserSettingsAppointmentRepository: AppointmentRepository, ObservableObject {
 
-	func getAppointmentt(callback: (Appointment) -> ()) {
+	func getAppointment(callback: (Appointment) -> ()) {
 		let data = userDefaults.object(forKey: "appointments")
 		do {
 			let appointment = try JSONDecoder().decode(Appointment.self, from: data as! Data)

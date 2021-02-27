@@ -13,7 +13,7 @@ class ViewModelCalendarDetail: ObservableObject {
 	@Published var selectedDate: Date = Date()
 
 	init(unfinishedAppointment: UnfinishedAppointmentHolder) {
-		if let date = unfinishedAppointment.appointment?.date {
+		if let date = unfinishedAppointment.appointment.date {
 			self.selectedDate = date
 		}
 	}

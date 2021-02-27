@@ -14,4 +14,5 @@ enum DepilationTyype: String, CaseIterable, Codable {
 	case waxShinHip = "Голень"
 	case sugaringBikiniClassic = "Бикини"
 	case armpits = "Подмышки"
+	case pusto = "Пусто"
 }

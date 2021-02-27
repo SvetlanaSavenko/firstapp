@@ -10,7 +10,7 @@ import Foundation
 
 protocol AppointmentRepository {
 
-	func getAppointmentt(callback: (Appointment)->())
+	func getAppointment(callback: (Appointment)->())
 
 	func saveAppointment(appointment: Appointment)
 }

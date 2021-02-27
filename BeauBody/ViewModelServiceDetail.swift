@@ -14,7 +14,7 @@ class ViewModelServiceDetail: ObservableObject {
 	let allServices: [DepilationTyype] = DepilationTyype.allCases
 
 	init(unfinishedAppointment: UnfinishedAppointmentHolder) {
-		if let services = unfinishedAppointment.appointment?.services {
+		if let services = unfinishedAppointment.appointment.services {
 			self.selectedServices = services
 		}
 	}

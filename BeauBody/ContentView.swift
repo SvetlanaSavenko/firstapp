@@ -29,10 +29,10 @@ struct ContentView: View {
 			.sheet(isPresented: $showCalendarModal) {
 				CalendarDetail(showСalendarModal: self.$showCalendarModal)
 			}
-			ForEach(vm.unfinishedAppointment?.services ?? [DepilationType.pusto], id: \.self) {
+			ForEach(vm.unfinishedServices, id: \.self) {
 				Text("\($0.rawValue)")
 			}
-			if let date = vm.unfinishedAppointment?.date {
+			if let date = vm.unfinishedDate {
 				Text("\(date)")
 			}
 			if vm.isAppointmentButtonVisible {
@@ -40,8 +40,10 @@ struct ContentView: View {
 					self.vm.saveAppointment()
 				})
 			}
-			ForEach(vm.currentAppointment?.services ?? [DepilationType.pusto], id: \.self) {
-				Text("Вы записаны: \($0.rawValue)")
+			if let currentAppointment = vm.currentAppointment?.services {
+				ForEach(currentAppointment, id: \.self) {
+					Text("Вы записаны: \($0.rawValue)")
+				}
 			}
 		}
 		.onAppear {

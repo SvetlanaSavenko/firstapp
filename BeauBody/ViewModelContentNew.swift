@@ -10,24 +10,34 @@ import Foundation
 
 class ViewModelContentNew: ObservableObject {
 
-	var repos: AppointmentRepository
+	private var repos: AppointmentRepository
+	private var unfinishedAppointment: UnfinishedAppointmentHolder
 	@Published var currentAppointment: Appointment? = nil
 	@Published var unfinishedServices: [DepilationTyype] = []
 	@Published var unfinishedDate: Date? = nil
 
-	@Published var isAppointmentButtonVisible = false // private set
+	@Published private(set) var isAppointmentButtonVisible = false
 
-	init(appointment: AppointmentRepository, unfinishedAppointment: UnfinishedAppointmentHolder) {
-		self.repos = appointment
+	init(currentAppointment: AppointmentRepository, unfinishedAppointment: UnfinishedAppointmentHolder) {
+		self.repos = currentAppointment
+		self.unfinishedAppointment = unfinishedAppointment
 	}
 
 	// weak self
 	func loadAppointments() {
-		self.repos.getAppointmentt(callback: { self.currentAppointment = $0 })
+		self.repos.getAppointment(callback: { self.currentAppointment = $0 })
+		self.unfinishedServices = unfinishedAppointment.appointment.services ?? []
+		self.unfinishedDate = unfinishedAppointment.appointment.date
+		updateButtonVisible()
 	}
 
-	func saveAppointments() {
+	private func updateButtonVisible() {
+		self.isAppointmentButtonVisible = self.unfinishedServices.count > 0 && self.unfinishedDate != nil
+	}
+
+	func saveAppointment() {
 		
 	}
+
 
 }

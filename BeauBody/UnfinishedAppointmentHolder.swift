@@ -10,11 +10,7 @@ import Foundation
 
 class UnfinishedAppointmentHolder: ObservableObject {
 
-	@Published var appointment: UnfinishedAppointment
-
-	// свойство, при изменении которого будут меняться наблюдатели во всех вью моделях
-//	var services: [DepilationTyype]? = nil // откуда-то будем брать эту запись
-//	var time: Date? = nil // откуда-то будем брать эту запись
+	var appointment: UnfinishedAppointment = UnfinishedAppointment(services: [], date: nil)
 	
 }
 
