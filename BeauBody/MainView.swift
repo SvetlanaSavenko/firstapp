@@ -8,12 +8,12 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct MainView: View {
 
 	@State private var showCalendarModal = false
 	@State private var showServiceModal = false
 
-	@ObservedObject private var vm: ViewModelContentNew = Container.instance.provideContentViewModel()
+	@ObservedObject private var vm: MainViewModel = Container.instance.provideMainViewModel()
 
 	var body: some View {
 		Group {
@@ -40,20 +40,17 @@ struct ContentView: View {
 					self.vm.saveAppointment()
 				})
 			}
-			if let currentAppointment = vm.currentAppointment?.services {
-				ForEach(currentAppointment, id: \.self) {
+			if let currentAppointment = vm.currentAppointment {
+				ForEach(currentAppointment.services, id: \.self) {
 					Text("Вы записаны: \($0.rawValue)")
 				}
 			}
-		}
-		.onAppear {
-			self.vm.loadAppointments()
 		}
 	}
 }
 
 struct ContentView_Previews: PreviewProvider {
 	static var previews: some View {
-		ContentView()
+		MainView()
 	}
 }

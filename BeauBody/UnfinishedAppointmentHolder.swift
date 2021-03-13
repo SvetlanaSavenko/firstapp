@@ -8,9 +8,19 @@
 
 import Foundation
 
-class UnfinishedAppointmentHolder: ObservableObject {
+class UnfinishedAppointmentHolder {
 
-	var appointment: UnfinishedAppointment = UnfinishedAppointment(services: [], date: nil)
-	
+	var appointment: UnfinishedAppointment = UnfinishedAppointment(services: [], date: nil) {
+		willSet { notify() }
+	}
+
+	private lazy var observers = [Observer]()
+
+	func attach(_ observer: Observer) {
+		observers.append(observer)
+	}
+
+	func notify() {
+		observers.forEach({ $0.update(subject: self)})
+	}
 }
-
