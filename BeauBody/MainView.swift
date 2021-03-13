@@ -29,10 +29,10 @@ struct MainView: View {
 			.sheet(isPresented: $showCalendarModal) {
 				CalendarDetail(showСalendarModal: self.$showCalendarModal)
 			}
-			ForEach(vm.unfinishedServices, id: \.self) {
+			ForEach(vm.unfinishedAppointment!.services, id: \.self) {
 				Text("\($0.rawValue)")
 			}
-			if let date = vm.unfinishedDate {
+			if let date = vm.unfinishedAppointment?.date {
 				Text("\(date)")
 			}
 			if vm.isAppointmentButtonVisible {

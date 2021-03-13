@@ -11,8 +11,7 @@ import Foundation
 class MainViewModel: ObservableObject, Observer {
 
 	@Published var currentAppointment: Appointment? = nil
-	@Published var unfinishedServices: [DepilationTyype] = []
-	@Published var unfinishedDate: Date? = nil
+	@Published var unfinishedAppointment: UnfinishedAppointment? = nil
 	@Published private(set) var isAppointmentButtonVisible = false
 
 	init(currentAppointment: AppointmentRepository, unfinishedAppointment: UnfinishedAppointmentHolder) {
@@ -23,13 +22,12 @@ class MainViewModel: ObservableObject, Observer {
 	// weak self
 	func loadAppointments(currentAppointment: AppointmentRepository, unfinishedAppointment: UnfinishedAppointmentHolder) {
 		currentAppointment.getAppointment(callback: { self.currentAppointment = $0 })
-		self.unfinishedServices = unfinishedAppointment.appointment.services ?? []
-		self.unfinishedDate = unfinishedAppointment.appointment.date
+		self.unfinishedAppointment = unfinishedAppointment.appointment
 		self.updateButtonVisible()
 	}
 
 	private func updateButtonVisible() {
-		self.isAppointmentButtonVisible = self.unfinishedServices.count > 0 && self.unfinishedDate != nil
+		self.isAppointmentButtonVisible = ((self.unfinishedAppointment?.services.count)!) > 0 && self.unfinishedAppointment?.date != nil
 	}
 
 	func saveAppointment() {
@@ -37,8 +35,7 @@ class MainViewModel: ObservableObject, Observer {
 	}
 
 	func update(subject: UnfinishedAppointmentHolder) {
-		self.unfinishedServices = subject.appointment.services ?? []
-		self.unfinishedDate = subject.appointment.date
+		self.unfinishedAppointment = subject.appointment
 	}
 
 }
