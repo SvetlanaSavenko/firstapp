@@ -17,10 +17,10 @@ class UnfinishedAppointmentHolder {
 	private lazy var observers = [Observer]()
 
 	func attach(_ observer: Observer) {
-		observers.append(observer)
+		self.observers.append(observer)
 	}
 
 	func notify() {
-		observers.forEach({ $0.update(subject: self)})
+		self.observers.forEach({ $0.update(subject: self)})
 	}
 }
