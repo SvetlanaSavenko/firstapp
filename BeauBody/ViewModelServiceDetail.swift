@@ -8,14 +8,25 @@
 
 import Foundation
 
-class ViewModelServiceDetail: ObservableObject {
+class ViewModelServiceDetail: ObservableObject, Observer {
 
-	@Published var selectedServices: [DepilationTyype] = []
+	let classAnfApp: UnfinishedAppointmentHolder
 	let allServices: [DepilationTyype] = DepilationTyype.allCases
+	@Published var unfinishedAppointmentServices: [DepilationTyype] {
+		didSet { self.updateServices()}
+	}
 
 	init(unfinishedAppointment: UnfinishedAppointmentHolder) {
-//		if let services = unfinishedAppointment.appointment.services {
-//			self.selectedServices = services
-//		}
+		self.classAnfApp = unfinishedAppointment
+		self.unfinishedAppointmentServices = unfinishedAppointment.appointment.services
+		unfinishedAppointment.attach(self)
+	}
+
+	func update(subject: UnfinishedAppointmentHolder) {
+		self.unfinishedAppointmentServices = subject.appointment.services
+	}
+
+	func updateServices() {
+		self.classAnfApp.appointment.services = self.unfinishedAppointmentServices
 	}
 }

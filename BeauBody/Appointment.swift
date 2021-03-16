@@ -6,8 +6,8 @@ struct Appointment: Codable {
 }
 
 struct UnfinishedAppointment: Codable {
-	let services: [DepilationTyype]
-	let date: Date?
+	var services: [DepilationTyype]
+	var date: Date?
 }
 
 enum DepilationTyype: String, CaseIterable, Codable {

@@ -10,14 +10,14 @@ import SwiftUI
 
 struct ServiceDetail: View {
 	@ObservedObject private var vm: ViewModelServiceDetail = Container.instance.provideServiceViewModel()
-
 	@Binding var showServiceModal: Bool
 
 	var body: some View {
 		VStack {
-			DepilationMenu(allServices: vm.allServices, selectedServices: $vm.selectedServices)
+			DepilationMenu(allServices: vm.allServices, selectedServices: $vm.unfinishedAppointmentServices)
 			Button("Готово"){
 				self.showServiceModal.toggle()
+
 			}
 		}
 	}
@@ -45,7 +45,7 @@ struct DepilationMenu: View {
 			}
 			if expand {
 				ForEach(allServices, id: \.self) { depilationType in
-					CheckboxField(state: selectedServices.contains(depilationType),
+					Checkbox(state: selectedServices.contains(depilationType),
 							label: depilationType.rawValue,
 								  callback: {
 									if $0 { self.selectedServices.append(depilationType) }
@@ -62,7 +62,7 @@ struct DepilationMenu: View {
 	}
 }
 
-struct CheckboxField: View {
+struct Checkbox: View {
 	@State var state: Bool
 	let label: String
 	let callback: (Bool)->()
