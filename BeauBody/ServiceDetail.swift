@@ -8,6 +8,7 @@
 
 import SwiftUI
 
+//тест
 struct ServiceDetail: View {
 	@ObservedObject private var vm: ViewModelServiceDetail = Container.instance.provideServiceViewModel()
 	@Binding var showServiceModal: Bool
